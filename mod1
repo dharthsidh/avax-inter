@@ -1,0 +1,31 @@
+//SPDX-License-Identifier:MIT
+pragma solidity ^0.8.0;
+contract errors
+{
+    uint256 x = 100;
+
+    function twice(uint256 a) public pure returns(uint256)
+    {
+        require(a<10,"Invalid input!!");
+        return a*2;
+    }
+
+    function zero(uint256 a) public pure returns(string memory)
+    {
+        
+        assert(a==0);
+        return ("match found");
+    }
+
+
+    function twice2(uint256 a) public returns(uint256)
+    {
+        x = x  * 2;
+        if(a>10)
+        {
+        revert("invalid input");
+        }
+        return x;
+    }
+
+}
